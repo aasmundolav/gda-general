@@ -2,6 +2,7 @@
 
 
 # 1 # using N62 ED50 -> wgs84 tranformation: https://epsg.io/1612
+
 ogr2ogr -f "ESRI Shapefile" 
 -s_srs "+proj=longlat +ellps=intl +towgs84=-116.641,-56.931,-110.559,0.893,0.921,-0.917,-3.52 +no_defs" 
 -t_srs EPSG:4326 
