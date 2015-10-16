@@ -6,3 +6,7 @@ gdal_translate -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=LZW" inputf
 
 #JPEG (Images)
 gdal_translate -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=JPEG" inputfile.tif outputfile.tif
+
+
+OVERVIEWS:
+gdaladdo -r average --config TILED YES inputfile.tif  2 4 8 16 32 64 128
