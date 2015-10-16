@@ -1,0 +1,8 @@
+
+
+#LOSSLESS (DTM files)
+gdal_translate -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=LZW" inputfile.tif outputfile.tif
+
+
+#JPEG (Images)
+gdal_translate -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=JPEG" inputfile.tif outputfile.tif
