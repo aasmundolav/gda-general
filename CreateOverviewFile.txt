@@ -11,9 +11,7 @@
 
 
 ### Convert VRT file to higher resolution file (8x,16x or 32x original resolution)
-
-
--tr xres yres -r nearest
+gdal_translate -tr xres yres -r nearest -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=LZW" inputfile.tif outputfile.tif 
 
 
 
