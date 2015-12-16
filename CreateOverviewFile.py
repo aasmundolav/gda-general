@@ -14,7 +14,19 @@
 
 
 ### Convert VRT file to higher resolution file (8x,16x or 32x original resolution)
-gdal_translate -tr xres yres -r nearest -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=LZW" inputfile.tif outputfile.tif 
+gdal_translate -tr xres yres -r nearest -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=LZW" overview.vrt overviewfile.tif 
 
+### Examples
+    #1
+    G:\G\ST_GIS_Data_01\RasterData\Bathy_Images\TEST2\images
+    gdalbuildvrt -input_file_list overviewimages.txt overview.vrt
+    gdal_translate -tr xres yres -r nearest -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=LZW" overview.vrt overviewfile.tif
+    
+    ### output error message: gdalbuildvrt does not support rotated geo transforms.
+    
+    gdalwarp -t_srs '+proj=utm +zone=11 +datum=WGS84' raw_spot.tif utm11.tif
 
-
+    #2
+    G:\G\ST_GIS_Data_01\RasterData\Bathy_DTM\2012\ST12521_Bathy\
+    gdalbuildvrt -input_file_list resolution2m.txt test\overview2m.vrt
+    
