@@ -11,3 +11,11 @@ JPEG_QUALITY=[1-100] (75 is default)
 
 OVERVIEWS:
 gdaladdo -r average --config COMPRESS_OVERVIEW JPEG --config TILED YES inputfile.tif  2 4 8 16 32 64 128
+
+
+
+
+## FOR LOOP
+
+C:\Program Files\GDAL>for %x in (D:\PALEORAsters\*.jpg) do gdal_translate -co "TILED=YES" -co "BIGTIFF=IF_NEEDED" -co "COMPRESS=JPEG" -co "JPEG_QUALITY=50" "%x"
+ "%x.tif"
